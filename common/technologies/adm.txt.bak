@@ -149,7 +149,6 @@ technology = { #National Ideas
 	DA_Hospital_0 = yes
 	DA_Smelting_Furnace_0 = yes
 	production_efficiency	 =	0.02
-	constable = yes #BT More Buildings added
 }
 
 technology = { #Workshop
