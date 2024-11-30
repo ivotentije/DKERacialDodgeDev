@@ -1,0 +1,118 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_gnomish_communities"
+		texturefile = "gfx//interface//buildings//gnomish_communities.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_independent_half_orc_clans"
+		texturefile = "gfx//interface//buildings//independent_half_orc_clans.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_protected_elven_glades"
+		texturefile = "gfx//interface//buildings//protected_elven_glades.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_half_elven_district"
+		texturefile = "gfx//interface//buildings//half_elven_district.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_harimari_abodes"
+		texturefile = "gfx//interface//buildings//harimari_abodes.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_dwarven_castle"
+		texturefile = "gfx//interface//buildings//dwarven_castle.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_halfling_village"
+		texturefile = "gfx//interface//buildings//halfling_village.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_human_neighborhood"
+		texturefile = "gfx//interface//buildings//human_neighborhood.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_goblin_cave_system"
+		texturefile = "gfx//interface//buildings//goblin_cave_system.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_gnollish_company_town"
+		texturefile = "gfx//interface//buildings//gnollish_company_town.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_harpy_entertainment_centers"
+		texturefile = "gfx//interface//buildings//harpy_entertainment_centers.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_centaur_nomad_lands"
+		texturefile = "gfx//interface//buildings//centaur_nomad_lands.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_orcish_fighting_arena"
+		texturefile = "gfx//interface//buildings//orcish_fighting_arena.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_kobold_undercity"
+		texturefile = "gfx//interface//buildings//kobold_undercity.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_enormous_ogre_feast"
+		texturefile = "gfx//interface//buildings//enormous_ogre_feast.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_official_troll_contracts"
+		texturefile = "gfx//interface//buildings//official_troll_contracts.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_hobgoblin_accesible_city"
+		texturefile = "gfx//interface//buildings//hobgoblin_accesible_city.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_ruinborn_elf_exhibition_hall"
+		texturefile = "gfx//interface//buildings//ruinborn_elf_exhibition_hall.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_lizardfolk_hunting_field"
+		texturefile = "gfx//interface//buildings//lizardfolk_hunting_field.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_racial_minority_districts"
+		texturefile = "gfx//interface//racial_minority_districts.dds"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_banner_left_12"
+		texturefile = "gfx//interface//banner_left_12.dds"
+		loadType = "INGAME"
+	}
+		spriteType = {
+		name = "GFX_banner_right_4"
+		texturefile = "gfx//interface//banner_right_4.dds"
+		loadType = "INGAME"
+	}
+		spriteType = {
+		name = "GFX_banner_right_5"
+		texturefile = "gfx//interface//banner_right_5.dds"
+		loadType = "INGAME"
+	}
+}

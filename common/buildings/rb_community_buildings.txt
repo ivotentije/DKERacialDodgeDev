@@ -1,0 +1,1274 @@
+dwarven_castle = {
+    cost = 500
+    time = 24				# Time (in months) that it takes to construct the building
+    one_per_country = no	# Optional, limits construction to one per country
+    allow_in_gold_provinces = yes # Optional, whether this building can be built in Gold producing provinces
+    onmap = no
+    modifier = {
+		local_defensiveness = 0.25
+		trade_goods_size_modifier = 0.15
+		local_production_efficiency = 0.1
+		local_fort_maintenance_modifier = -0.25
+		local_build_time = -0.1
+		allowed_num_of_buildings = 1
+		local_autonomy = 0.025
+    }
+    build_trigger = {
+		AND = {
+			NOT = { num_of_buildings_in_province = 16 }
+			OR = {
+				has_fort_building_trigger = yes
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+				AND = {has_terrain = dwarven_road development = 12}
+				development = 18
+			}
+			FROM = {
+				check_variable = {
+					which = dwarven_race_tolerance
+					value = 70
+				}
+			}
+		}
+	}
+    # The importance the AI places on constructing this building.
+    ai_will_do = {
+        factor = 0.9
+		modifier = {
+			factor = 100
+			OR = {
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+				has_terrain = city_terrain
+			}
+		}
+		modifier = {
+			factor = 100
+			OR = {
+				has_fort_building_trigger = yes
+			}
+		}
+		modifier = {
+			factor = 100
+			OR = {
+				has_fort_building_trigger = yes
+			}
+		}
+    }
+	on_built = { 
+		hidden_effect = { 
+			ROOT = {
+				add_dwarven_minority_size_effect = yes
+			}
+		}
+	}
+	on_destroyed = { 
+		hidden_effect = { 
+			ROOT = {
+				remove_dwarven_minority_size_effect = yes
+			}
+		}
+	}
+}
+
+human_neighborhood = {
+    cost = 500
+    time = 24             # Time (in months) that it takes to construct the building
+
+    one_per_country = no		# Optional, limits construction to one per country
+    allow_in_gold_provinces = yes # Optional, whether this building can be built in Gold producing provinces
+    onmap = no
+    modifier = {
+		local_manpower = 0.3
+		local_tax_modifier = 0.4
+		local_development_cost = -0.1
+		local_sailors_modifier = 0.3
+		allowed_num_of_buildings = 1
+    }
+    build_trigger = {
+		AND = {
+			NOT = { num_of_buildings_in_province = 16 }
+			OR = {
+				has_terrain = city_terrain
+				development = 18
+				province_has_center_of_trade_of_level = 1
+			}
+			FROM = {
+				check_variable = {
+					which = human_race_tolerance
+					value = 70
+				}
+			}
+		}
+	}
+    # The importance the AI places on constructing this building.
+    ai_will_do = {
+        factor = 0.9
+    }
+	on_built = { 
+		hidden_effect = { 
+			ROOT = {
+				add_human_minority_size_effect = yes
+			}
+		}
+	}
+	on_destroyed = { 
+		hidden_effect = { 
+			ROOT = {
+				remove_human_minority_size_effect = yes
+			}
+		}
+	}
+}
+
+
+halfling_village = {
+    cost = 500
+    time = 24             # Time (in months) that it takes to construct the building
+
+    one_per_country = no		# Optional, limits construction to one per country
+    allow_in_gold_provinces = yes # Optional, whether this building can be built in Gold producing provinces
+    onmap = no
+    modifier = {
+		trade_goods_size_modifier = 0.15
+		local_development_cost = -0.10
+		local_production_efficiency = 0.15
+		local_state_maintenance_modifier = 0.25
+		allowed_num_of_buildings = 1
+		supply_limit = 2
+    }
+    build_trigger = {
+		AND = {
+			NOT = { num_of_buildings_in_province = 16 }
+			OR = {
+				has_terrain = farmlands
+				has_terrain = grasslands
+				development = 12
+			}
+			FROM = {
+				check_variable = {
+					which = halfling_race_tolerance
+					value = 70
+				}
+			}
+		}
+	}    
+    # The importance the AI places on constructing this building.
+    ai_will_do = {
+        factor = 0.9
+    }
+	on_built = { 
+		hidden_effect = { 
+			ROOT = {
+				add_halfling_minority_size_effect = yes
+			}
+		}
+	}
+	on_destroyed = { 
+		hidden_effect = { 
+			ROOT = {
+				remove_halfling_minority_size_effect = yes
+			}
+		}
+	}
+}
+
+harimari_abodes = {
+    cost = 500
+    time = 24             # Time (in months) that it takes to construct the building
+
+    one_per_country = no		# Optional, limits construction to one per country
+    allow_in_gold_provinces = yes # Optional, whether this building can be built in Gold producing provinces
+    onmap = no
+    modifier = {
+		tax_income = 3
+		local_governing_cost_increase = -5
+		local_autonomy = -0.10
+		local_hostile_attrition = 1
+		local_institution_spread = -0.2
+		local_manpower = 0.2
+		allowed_num_of_buildings = 1
+    }
+    build_trigger = {
+		AND = {
+			NOT = { num_of_buildings_in_province = 16 }
+			OR = {
+				has_terrain = city_terrain
+				AND = {has_tax_building_trigger = yes development = 15}
+				province_has_center_of_trade_of_level = 1
+			}
+			FROM = {
+				check_variable = {
+					which = harimari_race_tolerance
+					value = 70
+				}
+			}
+		}
+	}
+    # The importance the AI places on constructing this building.
+    ai_will_do = {
+        factor = 0.9
+    }
+	on_built = { 
+		hidden_effect = { 
+			ROOT = {
+				add_harimari_minority_size_effect = yes
+			}
+		}
+	}
+	on_destroyed = { 
+		hidden_effect = { 
+			ROOT = {
+				remove_harimari_minority_size_effect = yes
+			}
+		}
+	}
+}
+
+half_elven_district = {
+    cost = 500
+    time = 24             # Time (in months) that it takes to construct the building
+
+    one_per_country = no		# Optional, limits construction to one per country
+    allow_in_gold_provinces = yes # Optional, whether this building can be built in Gold producing provinces
+    onmap = no
+    modifier = {
+		tax_income = 3
+		local_years_of_nationalism = -5
+		local_development_cost = -0.1
+		local_core_creation = -0.2
+		allowed_num_of_buildings = 1
+    }
+
+    build_trigger = {
+		AND = {
+			NOT = { num_of_buildings_in_province = 16 }
+			OR = {
+				has_terrain = city_terrain
+				development = 18
+				province_has_center_of_trade_of_level = 1
+			}
+			FROM = {
+				check_variable = {
+					which = half_elven_race_tolerance
+					value = 70
+				}
+			}
+		}
+	}
+    
+    # The importance the AI places on constructing this building.
+    ai_will_do = {
+        factor = 1.5
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = harafic_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = kheionai_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = eltibhari_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = devandi_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = eordan_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = harafic_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = effelai_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = amadian_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = taychendi_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = ynnic_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = north_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+    }
+	on_built = { 
+		hidden_effect = { 
+			ROOT = {
+				add_half_elven_minority_size_effect = yes
+			}
+		}
+	}
+	on_destroyed = { 
+		hidden_effect = { 
+			ROOT = {
+				remove_half_elven_minority_size_effect = yes
+			}
+		}
+	}
+}
+
+protected_elven_glades = {
+    cost = 500
+    time = 24             # Time (in months) that it takes to construct the building
+
+    one_per_country = no		# Optional, limits construction to one per country
+    allow_in_gold_provinces = yes # Optional, whether this building can be built in Gold producing provinces
+    onmap = no
+    modifier = {
+		trade_value_modifier = 0.1
+		local_tax_modifier = 0.3
+		local_production_efficiency = 0.15
+		local_defensiveness = 0.15
+		local_autonomy = 0.05
+		allowed_num_of_buildings = 1
+    }
+    build_trigger = {
+		AND = {
+			NOT = { num_of_buildings_in_province = 16 }
+			OR = {
+				has_terrain = woods
+				has_terrain = ancient_forest
+				has_terrain = gladeway
+				has_terrain = forest
+				has_terrain = bloodgroves
+				development = 18
+				province_has_center_of_trade_of_level = 1
+			}
+			FROM = {
+				check_variable = {
+					which = elven_race_tolerance
+					value = 70
+				}
+			}
+		}
+	}
+
+    
+    # The importance the AI places on constructing this building.
+    ai_will_do = {
+        factor = 1.5
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = harafic_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = kheionai_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = eltibhari_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = devandi_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = eordan_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = harafic_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = effelai_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = amadian_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = taychendi_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = ynnic_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = north_ruinborn_elf }
+				NOT = {is_year = 1550 }
+			}
+		}
+    }
+	on_built = { 
+		hidden_effect = { 
+			ROOT = {
+				add_elven_minority_size_effect = yes
+			}
+		}
+	}
+	on_destroyed = { 
+		hidden_effect = { 
+			ROOT = {
+				remove_elven_minority_size_effect = yes
+			}
+		}
+	}
+}
+
+independent_half_orc_clans = {
+    cost = 500
+    time = 24             # Time (in months) that it takes to construct the building
+
+    one_per_country = no		# Optional, limits construction to one per country
+    allow_in_gold_provinces = yes # Optional, whether this building can be built in Gold producing provinces
+    onmap = no
+    modifier = {
+		local_unrest = 1
+		local_production_efficiency = 0.1
+		local_manpower = 0.4
+		local_sailors_modifier = 0.2
+		trade_goods_size_modifier = 0.10
+		allowed_num_of_buildings = 1
+    }
+    build_trigger = {
+		AND = {
+			NOT = { num_of_buildings_in_province = 16 }
+			OR = {
+				development = 15
+				province_has_center_of_trade_of_level = 1
+			}
+			FROM = {
+				check_variable = {
+					which = half_orcish_race_tolerance
+					value = 70
+				}
+			}
+		}
+	}
+    # The importance the AI places on constructing this building.
+    ai_will_do = {
+        factor = 0.9
+    }
+	on_built = { 
+		hidden_effect = { 
+			ROOT = {
+				add_half_orcish_minority_size_effect = yes
+			}
+		}
+	}
+	on_destroyed = { 
+		hidden_effect = { 
+			ROOT = {
+				remove_half_orcish_minority_size_effect = yes
+			}
+		}
+	}
+}
+
+gnomish_communities = {
+    cost = 500
+    time = 24             # Time (in months) that it takes to construct the building
+
+    one_per_country = no		# Optional, limits construction to one per country
+    allow_in_gold_provinces = yes # Optional, whether this building can be built in Gold producing provinces
+    onmap = no
+    build_trigger = {
+		AND = {
+			NOT = { num_of_buildings_in_province = 16 }
+			OR = {
+				has_terrain = city_terrain
+				AND = { base_production = 8 has_production_building_trigger = yes}
+			}
+			FROM = {
+				check_variable = {
+					which = gnomish_race_tolerance
+					value = 70
+				}
+			}
+		}
+	}
+    modifier = {
+		local_unrest = 1
+		local_monthly_devastation = 0.05
+		institution_growth = 1.8
+		local_tax_modifier = 0.2
+		local_production_efficiency = 0.5
+		local_institution_spread = 0.25
+		allowed_num_of_buildings = 1
+		local_autonomy = 0.025
+    }
+    
+    # The importance the AI places on constructing this building.
+    ai_will_do = {
+        factor = 0.9
+    }
+	on_built = { 
+		hidden_effect = { 
+			ROOT = {
+				add_gnomish_minority_size_effect = yes
+			}
+		}
+	}
+	on_destroyed = { 
+		hidden_effect = { 
+			ROOT = {
+				remove_gnomish_minority_size_effect = yes
+			}
+		}
+	}
+}
+
+goblin_cave_system = {
+    cost = 500
+    time = 24             # Time (in months) that it takes to construct the building
+
+    one_per_country = no		# Optional, limits construction to one per country
+    allow_in_gold_provinces = yes # Optional, whether this building can be built in Gold producing provinces
+    onmap = no
+    build_trigger = {
+		AND = {
+			NOT = { num_of_buildings_in_province = 16 }
+			OR = {
+				has_terrain = cavern
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+				has_terrain = city_terrain
+				AND = {has_terrain = hills development = 10}
+				AND = {has_terrain = mountain development = 12}
+				development = 20
+			}
+			FROM = {
+				check_variable = {
+					which = goblin_race_tolerance
+					value = 70
+				}
+			}
+		}
+	}
+    modifier = {
+		local_unrest = -1
+		trade_goods_size = 0.25
+		local_build_time = -0.1
+		local_production_efficiency = 0.4
+		allowed_num_of_buildings = 2
+		local_autonomy = 0.025
+    }
+    
+    # The importance the AI places on constructing this building.
+    ai_will_do = {
+        factor = 0.9
+    }
+	on_built = { 
+		hidden_effect = { 
+			ROOT = {
+				add_goblin_minority_size_effect = yes
+			}
+		}
+	}
+	on_destroyed = { 
+		hidden_effect = { 
+			ROOT = {
+				remove_goblin_minority_size_effect = yes
+			}
+		}
+	}
+}
+
+gnollish_company_town = {
+    cost = 500
+    time = 24             # Time (in months) that it takes to construct the building
+
+    one_per_country = no		# Optional, limits construction to one per country
+    allow_in_gold_provinces = yes # Optional, whether this building can be built in Gold producing provinces
+    onmap = no
+    build_trigger = {
+		AND = {
+			NOT = { num_of_buildings_in_province = 16 }
+			OR = {
+				development = 15
+				trade_goods = slaves
+			}
+			FROM = {
+				check_variable = {
+					which = gnollish_race_tolerance
+					value = 70
+				}
+			}
+		}
+	}
+    modifier = {
+		local_manpower_modifier = 0.3
+		trade_goods_size_modifier = 0.2
+		local_production_efficiency = 0.2
+		local_tax_modifier = -0.25
+		local_unrest = -2
+		local_institution_spread = -0.5
+		allowed_num_of_buildings = 1
+    }
+    
+    # The importance the AI places on constructing this building.
+    ai_will_do = {
+        factor = 0.9
+    }
+	on_built = { 
+		hidden_effect = { 
+			ROOT = {
+				add_gnollish_minority_size_effect = yes
+			}
+		}
+	}
+	on_destroyed = { 
+		hidden_effect = { 
+			ROOT = {
+				remove_gnollish_minority_size_effect = yes
+			}
+		}
+	}
+}
+
+harpy_entertainment_centers = {
+    cost = 500
+    time = 24             # Time (in months) that it takes to construct the building
+
+    one_per_country = no		# Optional, limits construction to one per country
+    allow_in_gold_provinces = yes # Optional, whether this building can be built in Gold producing provinces
+    onmap = no
+    build_trigger = {
+		AND = {
+			NOT = { num_of_buildings_in_province = 16 }
+			OR = {
+				base_manpower = 6
+				has_trade_building_trigger = yes
+				has_terrain = city_terrain
+				province_has_center_of_trade_of_level = 1
+			}
+			FROM = {
+				check_variable = {
+					which = harpy_race_tolerance
+					value = 70
+				}
+			}
+		}
+	}
+    modifier = {
+		local_unrest = -4
+		tax_income = 3
+		trade_value = 1
+		province_trade_power_modifier = 0.25
+		local_manpower_modifier = -0.1
+		allowed_num_of_buildings = 1
+    }
+    
+    # The importance the AI places on constructing this building.
+    ai_will_do = {
+        factor = 0.9
+    }
+	on_built = { 
+		hidden_effect = { 
+			ROOT = {
+				add_harpy_minority_size_effect = yes
+			}
+		}
+	}
+	on_destroyed = { 
+		hidden_effect = { 
+			ROOT = {
+				remove_harpy_minority_size_effect = yes
+			}
+		}
+	}
+}
+
+centaur_nomad_lands = {
+    cost = 500
+    time = 24             # Time (in months) that it takes to construct the building
+
+    one_per_country = no		# Optional, limits construction to one per country
+    allow_in_gold_provinces = yes # Optional, whether this building can be built in Gold producing provinces
+    onmap = no
+    build_trigger = {
+		AND = {
+			NOT = { num_of_buildings_in_province = 16 }
+			OR = {
+				development = 15
+				has_terrain = steppe
+				has_terrain = grasslands
+				has_terrain = savannah
+			}
+			FROM = {
+				check_variable = {
+					which = centaur_race_tolerance
+					value = 70
+				}
+			}
+		}
+	}
+    modifier = {
+		local_friendly_movement_speed = 0.25
+		supply_limit = 2
+		tax_income = 2
+		land_forcelimit = 0.25
+		local_manpower = 0.3
+		province_trade_power_modifier = 0.25
+		local_hostile_attrition = 1
+		trade_goods_size = 0.25
+		allowed_num_of_buildings = 1
+    }
+    
+    # The importance the AI places on constructing this building.
+    ai_will_do = {
+        factor = 0.9
+    }
+	on_built = { 
+		hidden_effect = { 
+			ROOT = {
+				add_centaur_minority_size_effect = yes
+			}
+		}
+	}
+	on_destroyed = { 
+		hidden_effect = { 
+			ROOT = {
+				remove_centaur_minority_size_effect = yes
+			}
+		}
+	}
+}
+
+orcish_fighting_arena = {
+    cost = 500
+    time = 24             # Time (in months) that it takes to construct the building
+
+    one_per_country = no		# Optional, limits construction to one per country
+    allow_in_gold_provinces = yes # Optional, whether this building can be built in Gold producing provinces
+    onmap = no
+    build_trigger = {
+		AND = {
+			NOT = { num_of_buildings_in_province = 16 }
+			OR = {
+				AND = { has_manpower_building_trigger = yes development = 15}
+				has_terrain = city_terrain
+			}
+			FROM = {
+				check_variable = {
+					which = orcish_race_tolerance
+					value = 70
+				}
+			}
+		}
+	}
+    modifier = {
+		local_tax_modifier = 0.4
+		trade_goods_size_modifier = 0.2
+		local_manpower_modifier = 0.5
+		land_forcelimit = 1
+		allowed_num_of_buildings = 1
+    }
+    
+    # The importance the AI places on constructing this building.
+    ai_will_do = {
+        factor = 0.9
+    }
+	on_built = { 
+		hidden_effect = { 
+			ROOT = {
+				add_orcish_minority_size_effect = yes
+			}
+		}
+	}
+	on_destroyed = { 
+		hidden_effect = { 
+			ROOT = {
+				remove_orcish_minority_size_effect = yes
+			}
+		}
+	}
+}
+
+kobold_undercity = {
+    cost = 500
+    time = 24             # Time (in months) that it takes to construct the building
+
+    one_per_country = no		# Optional, limits construction to one per country
+    allow_in_gold_provinces = yes # Optional, whether this building can be built in Gold producing provinces
+    onmap = no
+    build_trigger = {
+		AND = {
+			NOT = { num_of_buildings_in_province = 16 }
+			OR = {
+				has_terrain = cavern
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+				has_terrain = city_terrain
+				AND = {has_terrain = hills development = 10}
+				AND = {has_terrain = mountain development = 12}
+				development = 20
+			}
+			FROM = {
+				check_variable = {
+					which = kobold_race_tolerance
+					value = 70
+				}
+			}
+		}
+	}
+    modifier = {
+		trade_goods_size = 0.25
+		local_build_cost = -0.2
+		local_development_cost = -0.1
+		local_manpower_modifier = 0.25
+		local_production_efficiency = 0.25
+		allowed_num_of_buildings = 2
+		local_autonomy = 0.05
+    }
+    
+    # The importance the AI places on constructing this building.
+    ai_will_do = {
+        factor = 0.9
+    }
+	on_built = { 
+		hidden_effect = { 
+			ROOT = {
+				add_kobold_minority_size_effect = yes
+			}
+		}
+	}
+	on_destroyed = { 
+		hidden_effect = { 
+			ROOT = {
+				remove_kobold_minority_size_effect = yes
+			}
+		}
+	}
+}
+
+enormous_ogre_feast = {
+    cost = 500
+    time = 24             # Time (in months) that it takes to construct the building
+
+    one_per_country = no		# Optional, limits construction to one per country
+    allow_in_gold_provinces = yes # Optional, whether this building can be built in Gold producing provinces
+    onmap = no
+    build_trigger = {
+		AND = {
+			NOT = { num_of_buildings_in_province = 16 }
+			OR = {
+				AND = {has_fort_building_trigger = yes development = 8}
+				development = 12
+			}
+			FROM = {
+				check_variable = {
+					which = ogre_race_tolerance
+					value = 70
+				}
+			}
+		}
+	}
+    modifier = {
+		local_tax_modifier = 0.2
+		local_build_cost = 0.1
+		local_build_time = -0.1
+		local_fort_maintenance_modifier = -0.15
+		allowed_num_of_buildings = 1
+		trade_goods_size_modifier = 0.20
+		land_forcelimit = 1
+		local_unrest = 1
+    }
+    
+    # The importance the AI places on constructing this building.
+    ai_will_do = {
+        factor = 0.9
+		modifier = {
+			factor = 100
+			OR = {
+				has_fort_building_trigger = yes
+			}
+		}
+    }
+	on_built = { 
+		hidden_effect = { 
+			ROOT = {
+				add_ogre_minority_size_effect = yes
+			}
+		}
+	}
+	on_destroyed = { 
+		hidden_effect = { 
+			ROOT = {
+				remove_ogre_minority_size_effect = yes
+			}
+		}
+	}
+}
+
+official_troll_contracts = {
+    cost = 500
+    time = 24             # Time (in months) that it takes to construct the building
+
+    one_per_country = no		# Optional, limits construction to one per country
+    allow_in_gold_provinces = yes # Optional, whether this building can be built in Gold producing provinces
+    onmap = no
+    build_trigger = {
+		AND = {
+			NOT = { num_of_buildings_in_province = 16 }
+			development = 12
+			FROM = {
+				check_variable = {
+					which = troll_race_tolerance
+					value = 70
+				}
+			}
+		}	
+	}
+    modifier = {
+		local_tax_modifier = -0.1
+		local_development_cost_modifier = -0.1
+		local_production_efficiency = 0.25
+		supply_limit = 2
+		local_build_cost = -0.1
+		local_hostile_movement_speed = -0.2
+		allowed_num_of_buildings = 1
+		trade_goods_size = 0.25
+    }
+    
+    # The importance the AI places on constructing this building.
+    ai_will_do = {
+        factor = 0.9
+    }
+	on_built = { 
+		hidden_effect = { 
+			ROOT = {
+				add_troll_minority_size_effect = yes
+			}
+		}
+	}
+	on_destroyed = { 
+		hidden_effect = { 
+			ROOT = {
+				remove_troll_minority_size_effect = yes
+			}
+		}
+	}
+}
+
+hobgoblin_accesible_city = {
+    cost = 500
+    time = 24             # Time (in months) that it takes to construct the building
+
+    one_per_country = no		# Optional, limits construction to one per country
+    allow_in_gold_provinces = yes # Optional, whether this building can be built in Gold producing provinces
+    onmap = no
+    build_trigger = {
+		AND = {
+			NOT = { num_of_buildings_in_province = 16 }
+			OR = {
+					AND = { has_forcelimit_building_trigger = yes development = 10}
+					has_terrain = city_terrain
+				}
+			FROM = {
+				check_variable = {
+					which = hobgoblin_race_tolerance
+					value = 70
+				}
+			}
+		}
+	}
+    modifier = {
+		local_manpower_modifier = 0.5
+		land_forcelimit = 1
+		local_production_efficiency = 0.15
+		local_tax_modifier = 0.2
+		local_development_cost = -0.10
+		regiment_recruit_speed = -0.25
+		allowed_num_of_buildings = 1
+    }
+    
+    # The importance the AI places on constructing this building.
+    ai_will_do = {
+        factor = 0.9
+		modifier = {
+			factor = 2
+			FROM = { culture_group = hobgoblin }
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = goblin }
+				NOT = {is_year = 1550 } }
+			}
+	}
+
+	on_built = { 
+		hidden_effect = { 
+			ROOT = {
+				add_hobgoblin_minority_size_effect = yes
+			}
+		}
+	}
+	on_destroyed = { 
+		hidden_effect = { 
+			ROOT = {
+				remove_hobgoblin_minority_size_effect = yes
+			}
+		}
+	}
+}
+
+ruinborn_elf_exhibition_hall = {
+    cost = 500
+    time = 24             # Time (in months) that it takes to construct the building
+
+    one_per_country = no		# Optional, limits construction to one per country
+    allow_in_gold_provinces = yes # Optional, whether this building can be built in Gold producing provinces
+    onmap = no
+    build_trigger = {
+		AND = {
+			NOT = { num_of_buildings_in_province = 16 }
+			OR = {
+				has_terrain = city_terrain
+				development = 18
+				province_has_center_of_trade_of_level = 1
+			}
+			FROM = {
+				check_variable = {
+					which = ruinborn_race_tolerance
+					value = 70
+				}
+			}
+		}
+	}
+    modifier = {
+		province_trade_power_modifier = 0.25
+		tax_income = 3
+		trade_value = 3
+		local_institution_spread = 0.25
+		allowed_num_of_buildings = 1
+    }
+    
+    # The importance the AI places on constructing this building.
+    ai_will_do = {
+        factor = 0.9
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = harafic_ruinborn_elf }
+				NOT = {is_year = 1480 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = kheionai_ruinborn_elf }
+				NOT = {is_year = 1480 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = eltibhari_ruinborn_elf }
+				NOT = {is_year = 1480 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = devandi_ruinborn_elf }
+				NOT = {is_year = 1480 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = eordan_ruinborn_elf }
+				NOT = {is_year = 1480 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = harafic_ruinborn_elf }
+				NOT = {is_year = 1480 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = effelai_ruinborn_elf }
+				NOT = {is_year = 1480 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = amadian_ruinborn_elf }
+				NOT = {is_year = 1480 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = taychendi_ruinborn_elf }
+				NOT = {is_year = 1480 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = ynnic_ruinborn_elf }
+				NOT = {is_year = 1480 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = veykodan }
+				NOT = {is_year = 1480 }
+			}
+		}
+		modifier = {
+			factor = 0
+			AND = {
+				FROM = { culture_group = north_ruinborn_elf }
+				NOT = {is_year = 1480 }
+			}
+		}
+    }
+	on_built = { 
+		hidden_effect = { 
+			ROOT = {
+				add_ruinborn_minority_size_effect = yes
+			}
+		}
+	}
+	on_destroyed = { 
+		hidden_effect = { 
+			ROOT = {
+				remove_ruinborn_minority_size_effect = yes
+			}
+		}
+	}
+}
+
+lizardfolk_hunting_field = {
+    cost = 500
+    time = 24             # Time (in months) that it takes to construct the building
+
+    one_per_country = no		# Optional, limits construction to one per country
+    allow_in_gold_provinces = yes # Optional, whether this building can be built in Gold producing provinces
+    onmap = no
+    build_trigger = {
+		AND = {
+			NOT = { num_of_buildings_in_province = 16 }
+			OR = {
+				has_terrain = jungle
+				development = 12
+			}
+			FROM = {
+				check_variable = {
+					which = lizardfolk_race_tolerance
+					value = 70
+				}
+			}
+		}
+	}
+    modifier = {
+		local_production_efficiency = 0.3
+		local_manpower_modifier = 0.5
+		local_hostile_movement_speed = -0.25
+		local_hostile_attrition = 1
+		allowed_num_of_buildings = 1
+		trade_goods_size = 0.25
+    }
+    
+    # The importance the AI places on constructing this building.
+    ai_will_do = {
+        factor = 0.9
+    }
+	on_built = { 
+		hidden_effect = { 
+			ROOT = {
+				add_lizardfolk_minority_size_effect = yes
+			}
+		}
+	}
+	on_destroyed = { 
+		hidden_effect = { 
+			ROOT = {
+				remove_lizardfolk_minority_size_effect = yes
+			}
+		}
+	}
+}
