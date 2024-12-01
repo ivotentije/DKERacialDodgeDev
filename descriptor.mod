@@ -13,4 +13,5 @@ dependencies={
 	"Anbennar 1.36 Scions of Sarhal"
 	"Development Points"
 	"Anbennar - Dev Points Compatch"
+	"Anbennar - Buildings Slots 22 24"
 }

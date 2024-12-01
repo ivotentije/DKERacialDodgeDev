@@ -18,12 +18,13 @@ early_road = {
 		#local_production_efficiency = 0.05
 
 		# Development
-		#local_development_cost = None
+		local_development_cost = -0.010
 
 		# Other
 		#local_institution_spread = 0.05
 		allowed_num_of_buildings = 1
 		#local_culture_conversion_cost = None
+		base_local_dev_points = 0.01	
 
 		# Movement
 		local_friendly_movement_speed = 0.075
@@ -62,6 +63,7 @@ gravel_road = {
 		local_institution_spread = 0.1
 		allowed_num_of_buildings = 1
 		#local_culture_conversion_cost = None
+		base_local_dev_points = 0.02
 
 		# Movement
 		local_friendly_movement_speed = 0.15
@@ -92,6 +94,7 @@ royal_road = {
 
 		# Development
 		local_development_cost = -0.05
+		base_local_dev_points = 0.03
 
 		# Other
 		local_institution_spread = 0.15
@@ -133,7 +136,8 @@ macadam_road = {
 		allowed_num_of_buildings = 1
 		local_culture_conversion_cost = -0.1
 		local_state_maintenance_modifier = 1
-
+		base_local_dev_points = 0.04
+		
 		# Movement
 		local_friendly_movement_speed = 0.5
 		#local_hostile_movement_speed = 0.15
@@ -170,6 +174,7 @@ railroad = {
 		allowed_num_of_buildings = 2
 		local_culture_conversion_cost = -0.2
 		local_state_maintenance_modifier = 2
+		base_local_dev_points = 0.05
 
 		# Movement
 		local_friendly_movement_speed = 2
