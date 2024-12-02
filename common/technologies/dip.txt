@@ -216,7 +216,7 @@ technology = { #Wharf
 	}
 	
 	range					= 	100
-
+	mb_canal = yes #BT More Buildings added
 	wharf = yes
 
 }
