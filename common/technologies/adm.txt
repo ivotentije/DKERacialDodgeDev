@@ -95,7 +95,8 @@ technology = { #Medieval Administration
 
 	production_efficiency	=	0.02
 	may_support_rebels = yes
-	
+	grain_depot = yes 
+
 	DA_Mine_Expansion = yes
 	
 	mage_tower = yes
@@ -279,7 +280,6 @@ technology = { #Improved Drainage
 		printing_press = 0.15
 	}
 	
-	grain_depot = yes 
 	#Improved Drainage
 	production_efficiency 	=	0.02
     allowed_idea_groups = 6
