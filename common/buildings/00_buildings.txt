@@ -2059,7 +2059,7 @@ dock = {
 	}
 	modifier = {
 		local_sailors_modifier = 0.5
-		province_trade_power = 2			#BTAddOn changed from .5 A 50 percent bonus available at practically day 1 was overpowered, and it snowballed for CoTs. While we still want CoTs strong, not x15 any other province this early. BT's lower avg dev but generally same dev for capitals and CoTs only made this worse, as well.
+		province_trade_power = 2		
 		base_local_dev_points = 0.01	#BT Added for Dev Points. Needs to also be changed in dev_points_l_english.yml to actually update the GUI
 
 		local_has_man_of_war = yes
